@@ -1,0 +1,68 @@
+﻿@model WebApplication1.Models.HoSoDuHoc
+
+@{
+    ViewBag.Title = "Xóa hồ sơ";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<style>
+
+</style>
+<br />
+
+<h1 style="text-align: center">XÓA HỒ SƠ</h1>
+
+<div>
+    <br />
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.KhachHang.TenKhachHang)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HocLuc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TiengAnh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NgayNop)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TrangThai)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BacHoc.TenBacHoc)
+            </th>
+        </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(model => model.KhachHang.TenKhachHang)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.HocLuc)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.TiengAnh)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.NgayNop)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.TrangThai)
+            </td>
+            <td>
+                @Html.DisplayFor(model => model.BacHoc.TenBacHoc)
+            </td>
+            </td>
+        </tr>
+    </table>
+    </br>
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="" style="text-align:center">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Trở về", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,104 @@
+﻿*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Baloo 2', cursive;
+    font-size: 22px;
+}
+
+img,
+picture,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+.container {
+    font-family: 'Baloo 2', cursive;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.header {
+    background: #630101;
+    padding: 2%;
+}
+
+
+.tab-register {
+    display: inline;
+    color: white;
+    border: 2px solid #ffff;
+    border-radius: 30px;
+    padding: 0 10px;
+    font-weight: 700;
+    cursor: pointer;
+    margin: 5px 5px 5px 25px;
+}
+
+.tab-login {
+    display: inline;
+    color: white;
+    border: 2px solid #ffff;
+    border-radius: 30px;
+    padding: 0 10px;
+    font-weight: 700;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+    .tab-login a,
+    .tab-register a {
+        color: white;
+        text-decoration: none;
+    }
+
+
+.menu {
+    /* list-style-type: none; */
+    color: white;
+    height: 100%;
+}
+
+.list-menu {
+    color: white;
+    text-decoration: none;
+    padding: 7px 30px;
+    margin: 5px 15px;
+    font-weight: 700;
+}
+
+.menu li {
+    display: inline-block;
+}
+
+    .menu li a {
+        text-decoration: none;
+        width: 150px;
+        cursor: pointer;
+    }
+
+table,
+th,
+td {
+    border: 1px solid #004AAD;
+    border-collapse: collapse;
+    text-align:center;
+}
+
+td {
+    padding: 20px;
+}
+table{
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}

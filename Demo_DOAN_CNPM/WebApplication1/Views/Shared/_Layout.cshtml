@@ -1,0 +1,162 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @*@Styles.Render("~/Content/css")*@
+    <link rel="stylesheet" href="~/Content/css/Home.css" />
+    <script src="https://kit.fontawesome.com/92e7113135.js"
+            crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <img class="img-logo" src="~/Content/images/LOGO_1.png" alt="" />
+            </div>
+            <div class="header-1">
+                <div class="header-1-search">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         width="25"
+                         height="25"
+                         viewBox="0 0 25 27"
+                         fill="none"
+                         class="icon-search">
+                        <path d="M24.66 23.4621L19.7915 18.4009C19.5717 18.1725 19.2739 18.0455 18.9613 18.0455H18.1654C19.5131 16.2536 20.314 13.9996 20.314 11.5477C20.314 5.71492 15.7678 0.98877 10.157 0.98877C4.54623 0.98877 0 5.71492 0 11.5477C0 17.3805 4.54623 22.1067 10.157 22.1067C12.5156 22.1067 14.6837 21.2742 16.4074 19.8731V20.7005C16.4074 21.0254 16.5295 21.3351 16.7493 21.5635L21.6178 26.6247C22.0768 27.1019 22.8191 27.1019 23.2732 26.6247L24.6551 25.1881C25.1141 24.7109 25.1141 23.9393 24.66 23.4621ZM10.157 18.0455C6.70459 18.0455 3.90654 15.1418 3.90654 11.5477C3.90654 7.9587 6.69971 5.04991 10.157 5.04991C13.6094 5.04991 16.4074 7.95362 16.4074 11.5477C16.4074 15.1368 13.6143 18.0455 10.157 18.0455Z"
+                              fill="#AAAAAA" />
+                    </svg>
+                    @*<input class="tab-search"
+                    type="search"
+                    name="searchString"
+                    id="searchForm"
+                    placeholder="Tìm kiến thông tin du học"
+                           value="@ViewBag.CurrentFilter"/>*@
+                    <form action="@Url.Action("Index", "ThongTinDuHocs")" method="get" id="searchForm" class="tab-search">
+                        <input class="tab-search-1"
+                               type="search"
+                               name="searchString"
+                               placeholder="Tìm kiến thông tin du học"
+                               value="@ViewBag.CurrentFilter" />
+                    </form>
+
+
+
+                    @if (Session["TenKhachHang"] == null)
+                    {
+                        <div class="tab-register">
+                            <a href="@Url.Action("CreateCustomer", "KhachHangs")">ĐĂNG KÝ</a>
+                        </div>
+                        <div class="tab-login">
+                            <a href="@Url.Action("LoginCus", "KhachHangs")">ĐĂNG NHẬP</a>
+                        </div>
+                    }
+                    else
+                    {
+                        <a href="@Url.Action("HoSo", "TaoHoSo")" style="color:white; text-decoration:none">@Session["TenKhachHang"]</a>
+                        <div class="tab-login">
+                            <a href="@Url.Action("Logout", "KhachHangs")">ĐĂNG XUẤT</a>
+                        </div>
+                    }
+                </div>
+
+                <div class="tab-menu">
+                    <ul class="menu">
+                        <li><a class="list-menu" href="@Url.Action("Info", "Home")">TRANG CHỦ</a></li>
+                        <li class="dropdown">
+                            <a class="list-menu">
+                                IELTS
+                                <i class="fa-solid fa-angle-down" style="color: #ffffff"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="@Url.Action("LichThiIelts", "DanhMuc")">LỊCH THI IELTS</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("LePhi", "DanhMuc")">LỆ PHÍ</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="list-menu">
+                                CẨM NANG
+                                <i class="fa-solid fa-angle-down" style="color: #ffffff"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="@Url.Action("DiChuyen", "DanhMuc")">DI CHUYỂN</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("DoAn", "DanhMuc")">ĐỒ ĂN</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("ThoiTiet", "DanhMuc")">THỜI TIẾT</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("HoatDong", "DanhMuc")">HOẠT ĐỘNG</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a class="list-menu">
+                                DỊCH VỤ SINH VIÊN
+                                <i class="fa-solid fa-angle-down" style="color: #ffffff"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="@Url.Action("ChoO", "DanhMuc")">TÌM CHỖ Ở</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("NganHang", "DanhMuc")">NGÂN HÀNG</a>
+                                </li>
+                                <li>
+                                    <a href="">BẢO HIỂM Y TẾ</a>
+                                </li>
+                                <li>
+                                    <a href="@Url.Action("Index", "BaiViets")">SỰ KIỆN</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a class="list-menu" href="@Url.Action("Index", "ThongTinDuHocs")">THÔNG TIN</a></li>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        @RenderBody()
+        <footer>
+            <div class="footer-list-item">
+                <div class="footer-list">
+                    <b>DỊCH VỤ HỖ TRỢ</b><br />
+                    <a class="link" href="">Tìm trường</a><br />
+                    <a class="link" href="">Blog du học</a>
+                </div>
+                <div class="footer-list">
+                    <b>CÁC TRƯỜNG ĐẠI HỌC</b>
+                </div>
+                <div class="footer-list">
+                    <b>IELTS</b><br />
+                    <a class="link" href="">IELTS là gì?</a><br />
+                    <a class="link" href="">Câu hỏi thường gặp</a><br />
+                    <a class="link" href="">Chính sách bảo mật IELTS</a><br />
+                    <a class="link" href="">Chính sách khiếu nại</a>
+                </div>
+                <div class="footer-list">
+                    <b>GIỚI THIỆU VỀ USEP</b><br />
+                    <p>Trụ sở: 828 Sư Vạn Hạnh, phường 13, quận 10, TP.HCM</p>
+                    <p>Hotline: 0123456789</p>
+                </div>
+            </div>
+            <div class="footer-end">
+                <a class="link" href="">Chính sách bảo mật</a>&emsp; &emsp; &emsp; &emsp;
+                <a class="link" href="">Điều khoản sử dụng</a>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
+<script src="~/Content/js/JavaScripts.js"></script>
+

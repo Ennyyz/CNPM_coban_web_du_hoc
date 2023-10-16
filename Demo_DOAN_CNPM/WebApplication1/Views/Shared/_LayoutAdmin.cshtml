@@ -1,0 +1,88 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @*@Styles.Render("~/Content/css")*@
+    <link rel="stylesheet" href="~/Content/css/HomeAdmin.css" />
+    <script src="https://kit.fontawesome.com/92e7113135.js"
+            crossorigin="anonymous"></script>
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="tab-menu">
+                <ul class="menu">
+                    <li><a class="list-menu" href="@Url.Action("InfoAdmin", "Home")">TRANG CHỦ</a></li>
+                    <li>
+                        @if (Session["TenNhanVien"] != null)
+                        {
+                            <a class="list-menu" href="@Url.Action("Index", "KhachHangs")">KHÁCH HÀNG</a>
+                        }
+                        else
+                        {
+                            <a class="list-menu" href="@Url.Action("LoginAdmin", "NhanViens", new { returnUrl = Url.Action("Index", "KhachHangs") })">KHÁCH HÀNG</a>
+                        }
+                    </li>
+                    <li>
+                        @if (Session["TenNhanVien"] != null)
+                        {
+                            <a class="list-menu" href="@Url.Action("Index", "TaoHoSo")">DUYỆT HỒ SƠ</a>
+                        }
+                        else
+                        {
+                            <a class="list-menu" href="@Url.Action("LoginAdmin", "NhanViens", new { returnUrl = Url.Action("Index", "TaoHoSo") })">DUYỆT HỒ SƠ</a>
+                        }
+                    </li>
+                    <li>
+                        @if (Session["TenNhanVien"] != null)
+                        {
+                            <a class="list-menu" href="@Url.Action("Index", "NhanViens")">TÀI KHOẢN</a>
+                        }
+                        else
+                        {
+                            <a class="list-menu" href="@Url.Action("LoginAdmin", "NhanViens", new { returnUrl = Url.Action("Index", "NhanViens") })">TÀI KHOẢN</a>
+                        }
+                    </li>
+                    <li>
+                        @if (Session["TenNhanVien"] != null)
+                        {
+                            <a class="list-menu" href="@Url.Action("Create", "BaiViets")">BÀI VIẾT</a>
+                        }
+                        else
+                        {
+                    <a class="list-menu" href="@Url.Action("LoginAdmin", "NhanViens", new { returnUrl = Url.Action("Index", "NhanViens") })">BÀI VIẾT</a>
+                        }
+                    </li>
+                    @if (Session["TenNhanVien"] == null)
+                    {
+                        <div class="tab-register">
+                            <a href="@Url.Action("CreateAdmin", "NhanViens")">ĐĂNG KÝ</a>
+                        </div>
+                        <div class="tab-login">
+                            <a href="@Url.Action("LoginAdmin", "NhanViens")">ĐĂNG NHẬP</a>
+                        </div>
+                    }
+                    else
+                    {
+                        @Session["TenNhanVien"]
+                        <div class="tab-login">
+                            <a href="@Url.Action("Logout", "NhanViens")">ĐĂNG XUẤT</a>
+                        </div>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+    @RenderBody()
+    <footer style=" height: 40px; text-align: center; padding: 10px; color:black; clear:both" ;>
+        <b style="color: black;">
+            &copy; @DateTime.Now.Year - Admin Group 8
+        </b>
+    </footer>
+</body>
+</html>
+

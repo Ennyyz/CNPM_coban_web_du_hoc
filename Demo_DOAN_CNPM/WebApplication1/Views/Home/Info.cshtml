@@ -1,0 +1,698 @@
+﻿
+@{
+    ViewBag.Title = "Thông tin chung về du học Mỹ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/css/Home.css" />
+
+<main>
+    <img class="img-intro" src="~/Content/images/Intro_1.png" alt="" />
+    @if (Session["TenKhachHang"] == null)
+    {
+        <div class="tab-register">
+            <a href="@Url.Action("CreateCustomer", "KhachHangs")">ĐĂNG KÝ</a>
+        </div>
+        <div class="tab-login">
+            <a href="@Url.Action("LoginCus", "KhachHangs")">ĐĂNG NHẬP</a>
+        </div>
+        <div class="tab-create">
+            <a class="add-file" href="@Url.Action("Create", "TaoHoSo")">
+                TẠO HỒ SƠ NGAY<br />
+            </a>
+        </div>
+    }
+    else
+    {
+        <div style="color:white">@Session["TenKhachHang"]</div>
+        <div class="tab-login">
+            <a href="@Url.Action("Logout", "KhachHangs")">ĐĂNG XUẤT</a>
+        </div>
+        <div class="tab-create">
+            <a class="add-file" href="@Url.Action("Create", "TaoHoSo")">
+                TẠO HỒ SƠ NGAY<br />
+            </a>
+        </div>
+    }
+    <div class="content">
+        <div class="content-left">
+            <p class="content-title">
+                DU HỌC MỸ | ĐIỀU KIỆN, VISA, CHI PHÍ, HỌC BỔNG VÀ CƠ HỘI VIỆC LÀM
+            </p>
+            <img src="~/Content/images/image 3.png" alt="" />
+            <p>
+                Nhằm tiếp cận được nền giáo dục tiên tiến bậc nhất thế giới, du học
+                Mỹ luôn là lựa chọn hàng đầu cho các bạn trẻ. Bài viết dưới đây sẽ
+                đưa ra những thông tin tổng quan nhất về du học Mỹ, cùng tham khảo
+                bạn nhé!
+            </p>
+            <img src="~/Content/images/image 4.png" alt="" />
+            <p>Mỹ luôn là lựa chọn hàng đầu dành cho du học sinh Việt Nam</p>
+            <div id="section1">
+                <h1>1. Có nên du học Mỹ hay không?</h1>
+                <p>
+                    Theo thống kê, hiện nay, có khoảng hơn 1 triệu du học sinh quốc tế
+                    đang theo học tại các bậc học của Mỹ. Con số đó chứng tỏ rằng Mỹ
+                    sức hút của Mỹ là vô cùng lớn đối với học sinh và sinh viên.
+                </p>
+                <h1>1.1. Ưu điểm của du học Mỹ</h1>
+                <h2>Chất lượng giáo dục cao</h2>
+                <p>
+                    Mỹ có chất lượng giáo dục cao đi kèm với đó là hàng loạt các
+                    trường Đại học đứng đầu bảng xếp hạng thế giới như Đại học
+                    Harvard, Đại học Stanford,... Ngoài ra, Mỹ còn đào tạo đa dạng các
+                    ngành học với hệ thống kiến thức được kiểm duyệt vô cùng nghiêm
+                    ngặt.
+                </p>
+                <h2>Bằng cấp được công nhận toàn cầu</h2>
+                <p>
+                    Bất cứ trường Đại học nào của Mỹ cũng cấp bằng cử nhân được công
+                    nhận toàn cầu. Điều này tạo điều kiện thuận lợi cho du học sinh Mỹ
+                    khi muốn quay về nước của mình để làm việc và sinh sống. Người có
+                    bằng tại các trường tại Mỹ luôn được nhà tuyển dụng trong nước và
+                    các tập đoàn đa quốc gia săn đón với mức lương hậu hĩnh và đãi ngộ
+                    tốt.
+                </p>
+                <h2>Trải nghiệm nền văn hóa đa dạng, độc đáo</h2>
+                <p>
+                    Hơn nữa, Mỹ có tổng 50 khu tiểu liên Bang và 1 đặc khu liên Bang
+                    (gồm 48 tiểu Bang lục địa), cùng với vô số chủng tộc như người bản
+                    địa, người da màu, người châu Á định cư - tạo nên một nền văn hoá
+                    vô cùng đa dạng và phong phú. Khi sinh sống tại đây, bạn sẽ được
+                    tiếp xúc với nhiều nền văn hóa khác nhau, do đó, cải thiện được
+                    những kinh nghiệm sống, kiến thức thực tiễn và mở rộng vốn hiểu
+                    biết của bản thân.
+                </p>
+                <h1>1.2. Nhược điểm của du học Mỹ</h1>
+                <p>
+                    Tuy nhiên, du học Mỹ cũng có vài nhược điểm mà bạn cần cân nhắc.
+                </p>
+                <h2>1. Học phí - Chi phí sinh hoạt đắt đỏ</h2>
+                <p>
+                    Mỹ có GDP (danh nghĩa) đứng thứ 7 thế giới, vì vậy, mức sống của
+                    người dân tương đối cao với các khoản chi tiêu đắt đỏ, trong đó có
+                    học phí. Vấn đề này cũng là rào cản lớn nhất của các bạn học sinh,
+                    sinh viên Việt Nam khi muốn theo học tại quốc gia này, bởi khả
+                    năng tài chính của hầu hết gia đình Việt Nam không đủ để chi trả.
+                </p>
+                <h2>2. Khác biệt văn hóa</h2>
+                <p>
+                    Không những thế, chính sự đa dạng văn hoá cũng gây nên bất lợi đối
+                    với du học sinh. Khác biệt về văn hoá giữa phương Đông và phương
+                    Tây cũng là một rào cản lớn khiến cho du học sinh Việt Nam khó hòa
+                    nhập và thích nghi với môi trường ở Mỹ. Ví dụ, người Mỹ luôn dùng
+                    dĩa và thìa khi ăn thay vì đũa như người Việt Nam, điều này sẽ
+                    khiến cho du học sinh Việt Nam phải luyện tập khá lâu mới có thể
+                    quen được.
+                </p>
+            </div>
+            <div id="section2">
+                <h1>2. Điều kiện du học Mỹ</h1>
+                <p>
+                    Để du học Mỹ, bạn cần đáp ứng một số điều kiện tiên quyết mà Chính
+                    phủ Mỹ yêu cầu, cụ thể như sau:
+                </p>
+                <h1>2.1. Yêu cầu về tiếng Anh</h1>
+                <p>
+                    Yêu cầu về tiếng Anh là bắt buộc đối với những bạn có mong muốn du
+                    học Mỹ. Từng cấp bậc và trường học sẽ có những yêu cầu riêng, cụ
+                    thể:<br />- Bậc THPT: Chứng chỉ IELTS thấp nhất 5.0 với 4 kỹ năng,
+                    đạt trên 45 điểm bài thi tiếng Anh SLEP (The Secondary Level
+                    English Proficiency) hoặc qua bài thi tiếng Anh đầu vào của trường
+                    bạn theo học. <br />- Bậc Đại học: IELTS không thấp hơn 6.0 đối
+                    với cả 4 kỹ năng hoặc TOEFL 68 điểm. Tuy nhiên, để có thể vào học
+                    tại trường có rank cao hoặc có nhiều lựa chọn hơn, bạn cần đảm bảo
+                    IELTS từ 6.5 trở lên. <br />- Bậc Cao đẳng: Yêu cầu mức điểm thấp
+                    hơn, với 5.5 IELTS hoặc 61 TOEFL. <br />Bậc Thạc sĩ, Tiến sĩ: Cần
+                    đạt IELTS tối thiểu 6.5 hoặc TOEFL 79. <br />Tuy nhiên, mức điểm
+                    trên là điều kiện để bạn có thể vào học những khoá học chính ngay
+                    khi đi du học. Ngoài ra, chính phủ Mỹ vẫn tạo điều kiện cho các
+                    bạn có trình độ tiếng Anh thấp đăng ký và hoàn thành khóa học
+                    tiếng Anh tại đất nước này trước khi vào học chính thức. Tuy
+                    nhiên, bạn nên học tiếng Anh tại Việt Nam để vừa giảm thiểu được
+                    chi phí cũng như đảm bảo tỷ lệ đỗ Visa cao nhất. Đồng thời, việc
+                    này cũng giúp bạn nhanh chóng hòa nhập và tiếp thu kiến thức dễ
+                    dàng khi đi du học.
+                </p>
+                <h1>2.2. Yêu cầu về học lực</h1>
+                <p>
+                    Thông thường, để có thể theo học tại các trường ở Mỹ, bạn cần phải
+                    đạt mức điểm tối thiểu là 6.5 (trên trung bình). Tuy nhiên, do mức
+                    độ cạnh tranh khi du học Mỹ rất cao, để tăng cơ hội thành công,
+                    bạn nên chuẩn bị một số hồ sơ học tập đẹp và cần đạt điểm từ mức
+                    khá trở lên (trên 7.5).<br />
+                    Tuy nhiên, mỗi bậc học, ngành học và trường học sẽ có những yêu
+                    cầu riêng về học lực. Chẳng hạn, đối với một số trường Đại học top
+                    đầu như Massachusetts Institute of Technology, University of
+                    Chicago, Stanford University,...bạn sẽ phải hoàn thành và vượt qua
+                    các bài thi đầu vào như GRE (The Graduate Record Examination), bài
+                    thi SAT (Scholastic Assessment Test - bài kiểm tra năng lực học
+                    tập), GMAT (Graduate Management Admission Test)...Do vậy, bạn nên
+                    tìm hiểu trên Website của các trường bạn muốn theo học để nắm bắt
+                    thông tin một cách rõ ràng nhất.
+                </p>
+                <h1>2.3. Điều kiện tài chính</h1>
+                <p>
+                    Mỹ là quốc gia với mức sống tương đối đắt đỏ, vì vậy điều kiện tài
+                    chính để đi du học Mỹ cũng được yêu cầu cao hơn so với quốc gia
+                    khác. Để hoàn thành việc xin visa du học Mỹ, bạn cần làm thủ tục
+                    chứng minh tài chính nhằm đảm bảo bạn và gia đình có đủ khả năng
+                    để trang trải trong suốt quá trình du học. <br />Thông thường, bạn
+                    cần chứng minh số dư trong tài khoản tối thiểu hoặc nhiều hơn mức
+                    học phí và sinh hoạt phí của năm học đầu tiên bằng biểu mẫu I-20.
+                    Tuy nhiên, để tăng khả năng chứng minh tài chính thành công, bạn
+                    nên có số dư tài khoản gấp khoảng 1.5 lần so với số tiền nộp học
+                    yêu cầu. <br />Chi phí trung bình đối với mỗi cấp học hoặc từng
+                    khu vực là khác nhau, do đó, bạn có thể tham khảo điều kiện du học
+                    Mỹ để có những thông tin chi tiết hơn bạn nhé!
+                </p>
+            </div>
+            <div id="section3">
+                <h1>3. Thủ tục xin Visa du học Mỹ 2023</h1>
+                <p>
+                    Thủ tục xin visa du học Mỹ tương đối phức tạp và nhiều quy trình,
+                    vì vậy, bạn nên tham khảo những điều sau:
+                </p>
+                <h1>3.1. Giấy tờ, hồ sơ cần chuẩn bị</h1>
+                <p>
+                    Trước tiên, để xin visa du học Mỹ, bạn cần chuẩn bị những loại
+                    giấy tờ và hồ sơ như sau:
+                </p>
+                <table>
+                    <tr>
+                        <td>Giấy tờ cần thiết</td>
+                        <td>
+                            Bạn cần chuẩn bị đủ những giấy tờ sau: Mẫu Đơn xin Thị thực
+                            Không Định cư Điện tử (DS - 160) <br />- Hộ chiếu có hiệu lực
+                            ít nhất 6 tháng <br />- Ảnh thẻ 5x5cm (không lấy ảnh chụp từ
+                            quá lâu) <br />- Biên lai chứng minh đã thanh toán lệ phí Đơn
+                            xin Thị thực không định không hoàn lại, trị giá $160 USD
+                            <br />- Mẫu đơn I-20 đã có xác nhận của trường tại Mỹ <br />-
+                            Biên lai lệ phí SEVIS (Hệ thống Theo dõi Sinh viên và Khách
+                            Trao đổi)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Giấy tờ hỗ trợ</td>
+                        <td>
+                            Ngoài các giấy tờ cần thiết, bạn nên chuẩn bị một số giấy tờ
+                            hỗ trợ đến buổi phỏng vấn, cụ thể: <br />- Giấy tờ thể hiện sự
+                            ràng buộc về mặt tài chính đối với đất nước của bạn, nhằm đảm
+                            bảo bạn sẽ trở về quốc gia của mình sau khi hoàn thành chương
+                            trình học tại Mỹ <br />- Chứng minh tài chính đảm bảo bạn có
+                            thể thanh toán mọi chi phí cho năm học đầu tiên tại Mỹ <br />-
+                            Nếu gia đình là người hỗ trợ tài chính, cần mang theo minh
+                            chứng với người hỗ trợ <br />- Các giấy tờ học thuật: học bạ,
+                            chứng chỉ ngoại ngữ (IELTS, TOEFL,...), chứng nhận, các bằng
+                            cấp đi kèm
+                        </td>
+                    </tr>
+                </table>
+                <h1>3.2. Quy trình xin Visa du học Mỹ</h1>
+                <p>
+                    Mặc dù thủ tục làm Visa đi du học Mỹ khá phức tạp, tuy nhiên quy
+                    trình xin Visa lại tương đối rõ ràng với các bước như sau:
+                </p>
+                <table>
+                    <tr>
+                        <td>
+                            Bước 1: Điền vào Form I- 20, hoàn tất mẫu đơn xin visa du học
+                            Mỹ.
+                        </td>
+                        <td>
+                            Bước đầu tiên, bạn cần hoàn thành mẫu Form I - 20 dành cho
+                            những du học sinh không định cư được cấp do trường học bên Mỹ.
+                            Và tiếp tục hoàn thành đơn xin thị thực không định cư Mỹ (Form
+                            DS - 160).
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Bước 2: Đóng phí xin visa, phí SEVIS</td>
+                        <td>
+                            Tại đây bạn cần đóng các loại phí, cụ thể: <br />- Phí xin
+                            Visa $160 USD (~ 4 triệu VNĐ). <br />- Phí SEVIS $350 USD (~
+                            8.5 triệu VNĐ). <br />Lưu ý, những khoản tiền trên đều thanh
+                            toán bằng tiền Việt.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Bước 3: Đặt lịch hẹn phỏng vấn xin Visa</td>
+                        <td>
+                            Sau khi hoàn thành các mẫu đơn, khoản phí, bạn cần hẹn lịch
+                            phỏng vấn qua Website CGI Federal.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Bước 4: Phỏng vấn xin Visa tại đại sứ quán</td>
+                        <td>
+                            Bạn cần tham gia buổi phỏng vấn vào đúng ngày hẹn tại bước 3
+                            và mang theo tất cả các giấy tờ được yêu cầu. Trong buổi phỏng
+                            vấn, Lãnh sự quán sẽ quan tâm về chương trình, kế hoạch, mục
+                            tiêu học tập của bạn. Vì vậy, để đảm bảo khả năng đỗ visa, bạn
+                            nên chuẩn bị lộ trình học và tinh thần tự tin.
+                        </td>
+                    </tr>
+                </table>
+                <p>
+                    Trên đây là quy trình 4 bước xin Visa đi du học Mỹ, quá trình xét
+                    duyệt hồ sơ sẽ diễn ra trong khoảng từ 2 - 2.5 tháng. Vì vậy, bạn
+                    hãy chuẩn bị đầy đủ các loại giấy tờ yêu cầu cũng như tinh thần
+                    thật thoải mái và tự tin để vượt qua bạn nhé!
+                </p>
+            </div>
+            <div id="section4">
+                <h1>4. Hồ sơ xin thư mời nhập học tại Mỹ</h1>
+                <p>
+                    Hồ sơ du học Mỹ hoàn chỉnh gồm những giấy tờ sau: <br />- Mẫu đơn
+                    xin nhập học theo đơn được cấp từ phía nhà trường. <br />- Bản sao
+                    hộ chiếu. <br />- Bảng điểm hoặc học bạ các cấp đã học được dịch
+                    sang tiếng Anh. <br />- Chứng chỉ tiếng Anh được (IELTS, TOEFL,
+                    Duolingo,...) <br />- Xác nhận của các bài thi chuẩn hóa quốc tế
+                    nếu có như SAT, ACT,... Tuỳ trường có thể yêu cầu bắt buộc hoặc
+                    không. <br />- Bài luận cá nhân tùy từng trường yêu cầu: Chủ đề
+                    theo yêu cầu của từng trường. <br />- Thư giới thiệu: Điều kiện
+                    bắt buộc đối từng trường Đại học, được viết bởi các giáo viên
+                    trong trường nhằm hiểu hơn về tính cách và khả năng đóng góp của
+                    bạn với môi trường cũ. Thông thường, bậc Cao đẳng tại Mỹ sẽ không
+                    yêu cầu thư giới thiệu. <br />Như vậy, hồ sơ du học Mỹ tương đối
+                    phức tạp so với các quốc gia khác và yêu cầu về giấy tờ xác minh
+                    cũng như bằng cấp cũng nghiêm ngặt hơn hầu hết quốc gia Châu Á.
+                    Tuy nhiên, những trường có thứ hạng càng cao thì yêu cầu càng phức
+                    tạp, do vậy, bạn cần tìm hiểu kỹ lưỡng yêu cầu của trường mình.
+                </p>
+            </div>
+            <div id="section5">
+                <h1>5. Chi phí du học Mỹ mới nhất 2023</h1>
+                <p>
+                    Để có cơ hội học tập và trải nghiệm tại Mỹ, bạn cần chuẩn bị những
+                    khoản phí như sau:
+                </p>
+                <h1>5.1. Học phí du học Mỹ</h1>
+                <p>
+                    Hoa Kỳ ban hành các tiêu chuẩn chung về các loại học phí, vì vậy,
+                    mức học phí còn phụ thuộc vào quy định của từng trường. Học phí sẽ
+                    thay đổi dựa trên nhiều yếu tố như địa điểm của trường, xếp hạng
+                    của trường, ngành bạn theo học,.... Khoản học phí phải đóng dự
+                    kiến như sau: <br />- Trung học: 20.000 - 50.000 USD/năm <br />-
+                    Cao Đẳng: 7.000 - 12.000/ năm <br />- Hệ đại học: 12.000 – 50.000
+                    USD/năm <br />- Chương trình Thạc sĩ: 15.000 – 35.000 USD/năm
+                    <br />- Chương trình Tiến sĩ: 20.000 - 40.000 USD/năm <br />Mức
+                    phí trên chỉ mang tính chất tham khảo bởi còn phụ thuộc nhiều vào
+                    các yếu tố khác nhau.
+                </p>
+                <h1>5.2. Chi phí sinh hoạt</h1>
+                <p>
+                    Ngoài học phí, bạn sẽ phải chi trả chi phí sinh hoạt phí, tại Mỹ,
+                    các khoản sinh hoạt phí cũng tương đối đắt đỏ, ước lượng như sau:
+                </p>
+                <table>
+                    <tr>
+                        <td><b>Hạng mục</b></td>
+                        <td><b>Chi phí</b></td>
+                    </tr>
+                    <tr>
+                        <td>Chi phí nhà ở</td>
+                        <td>10.000 - 20.000 USD/năm (~ 240 - 480 triệu VND/năm)</td>
+                    </tr>
+                    <tr>
+                        <td>Chi phí đi lại</td>
+                        <td>1.080 - 1.560 USD/năm (~ 26 - 37 triệu VND/năm)</td>
+                    </tr>
+                    <tr>
+                        <td>Chi phí ăn uống</td>
+                        <td>300 - 500 USD/tháng (~ 7 - 12 triệu VND/tháng)</td>
+                    </tr>
+                    <tr>
+                        <td>Bảo hiểm y tế</td>
+                        <td>2.000 USD/năm (~ 48 triệu VND)</td>
+                    </tr>
+                    <tr>
+                        <td>Mạng internet</td>
+                        <td>20 USD/tháng (~ 480.000 VND)</td>
+                    </tr>
+                    <tr>
+                        <td>Điện, nước, gas/td></td>
+                        <td>500 - 600 USD/tháng (~ 12 - 14.5 triệu USD/tháng)</td>
+                    </tr>
+                    <tr>
+                        <td>Chi phí khác</td>
+                        <td>50 - 200 USD/tháng (~ 1 - 4 triệu USD/tháng)</td>
+                    </tr>
+                    <tr>
+                        <td>Tổng</td>
+                        <td>23.000 - 45.000 USD/năm (~ 550 triệu - 1 tỷ 1 VND/năm)</td>
+                    </tr>
+                </table>
+                <p>
+                    Các khoản chi phí trên không cố định mà phù thuộc nhiều vào nhu
+                    cầu và mục đích cá nhân. Tuy nhiên, mức phí sinh hoạt tại Mỹ khá
+                    đắt đỏ so với các quốc gia khác như New Zealand, Canada, Hàn,...
+                </p>
+            </div>
+            <div id="section6">
+                <h1>6. Du học Mỹ nên học ngành gì?</h1>
+                <p>
+                    Chương trình học của Mỹ đào tạo với đa dạng các ngành học, hầu hết
+                    ngành nào cũng có tuy nhiên không phải ngành học nào cũng phát
+                    triển. Dưới đây là top 5 ngành học được đánh giá tốt nhất nước Mỹ,
+                    cụ thể như sau: <br /><b>- Khoa học máy tính:</b> Ngành học phát
+                    triển bậc nhất nước Mỹ, phù hợp với những người đam mê với IT và
+                    công nghệ với mức lương khởi điểm cực cao, tuy nhiên sự chọn lọc
+                    cũng cao hơn các ngành khác. <br /><b>- Truyền thông:</b> Chuyên
+                    ngành này đang là ưu thế phát triển hàng đầu hiện nay, mở ra nhiều
+                    cơ hội nghề nghiệp trong các lĩnh vực như kinh doanh, quảng cáo,
+                    báo chí, tổ chức các sự kiện,... <br /><b>- Chính trị:</b> Nghe có
+                    vẻ rất xa lạ dành cho du học sinh, tuy nhiên ngành học này lại cực
+                    kỳ thú vị. Ngành học này mở ra các cơ hội để làm các nghề như luật
+                    sư, chính khách, nhà báo,... <br /><b>- Kinh doanh:</b> Tiềm lực
+                    ngành này vô cùng rộng mở, bạn có thể làm cho các doanh nghiệp lớn
+                    hoặc tự thân khởi nghiệp với mức lương khá hậu hĩnh. <br /><b>- Kinh tế:</b>
+                    Ngành kinh tế sẽ được đào tạo các kiến thức mang tính vĩ mô hơn,
+                    sinh viên được trau dồi kiến thức về quy luật trao đổi hàng hoá,
+                    tiêu thụ hàng hoá,...
+                </p>
+            </div>
+            <div id="section7">
+                <h1>7. Học bổng và chính sách cho du học sinh Mỹ</h1>
+                <p>
+                    Nếu bạn và gia đình đang gặp phải những nỗi lo về tài chính, thì
+                    có thể tham khảo các học bổng Mỹ và chính sách dành cho du học
+                    sinh Mỹ dưới đây nhé!
+                </p>
+                <h1>7.1. Các Học bổng du học Mỹ nổi bật</h1>
+                <p>
+                    Hàng năm có vô số học sinh và sinh viên các nước đổ về Mỹ để học
+                    tập và làm việc, vì vậy Chính phủ Mỹ và các trường học tại quốc
+                    gia này cũng mở ra rất nhiều gói học bổng nhằm khuyến khích du học
+                    sinh, bạn có thể tham khảo trong bảng sau:
+                </p>
+                <table>
+                    <tr>
+                        <td><b>Bậc học</b></td>
+                        <td><b>Tên học bổng</b></td>
+                        <td><b>Điều kiện dự tuyển</b></td>
+                        <td><b>Giá trị</b></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="4">Bậc THPT</td>
+                        <td><a href="">Học bổng SEAYLP</a></td>
+                        <td>
+                            Độ tuổi từ 15 - 17 Kỹ năng tiếng Anh tốt, hoạt động xã hội và
+                            ngoại khoá mạnh mẽ. Được sự cho phép của cha/mẹ hoặc người
+                            giám hộ
+                        </td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="">Học bổng chương trình hè tại Đại học Chicago</a>
+                        </td>
+                        <td>Từ 15 tuổi trở lên Tiếng Anh tốt</td>
+                        <td>1.000 - 4.000 USD (~ 23 triệu - 92 triệu VND)</td>
+                    </tr>
+                    <tr>
+                        <td><a href="">Học bổng YYGS của trường Đại học Yale</a></td>
+                        <td>Từ 16 tuổi trở lên Tiếng Anh tốt</td>
+                        <td>6.500 - 7.000 USD (~150 - 170 triệu VND)</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="">Học bổng UWC cho học sinh có hoàn cảnh khó khăn</a>
+                        </td>
+                        <td>
+                            Là công dân Việt Nam và có quốc tịch Việt Nam Độ tuổi từ 16 -
+                            18
+                        </td>
+                        <td>100% học phí và chi phí sinh hoạt tại trường UWC.</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="5">Bậc Đại học</td>
+                        <td><a href="">Humphrey Fellowship Program</a></td>
+                        <td>
+                            Có ít nhất 1 bằng Đại học Tối thiểu 5 năm kinh nghiệm trước
+                            tháng 8 cho các lĩnh vực liên quan TOEFL 525 hoặc iBT TOEFL 71
+                        </td>
+                        <td>100% các khoản phí cần bỏ ra.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="">American University Scholarships</a>
+                        </td>
+                        <td>
+                            Là sinh viên quốc tế, có bằng tốt nghiệp cấp 3 GPA: 3.8/4.0
+                            (tương đương 9.4/10) Ngoại ngữ: IELTS 7.0, TOEFL iBT 95, TOEFL
+                            giấy 600
+                        </td>
+                        <td>100% học phí và tiền ăn</td>
+                    </tr>
+                    <tr>
+                        <td><a href="">Amherst College Scholarships</a></td>
+                        <td>
+                            Khả năng ngoại ngữ: iBT TOEFL 100, TOEFl giấy 75, IELTS 7.5
+                        </td>
+                        <td>
+                            Đảm bảo chi trả số tiền còn lại của học phí mà sinh viên cần.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="">Berea College Scholarships</a>
+                        </td>
+                        <td>
+                            Khả năng ngoại ngữ tốt, học bạ chính thức bậc THPT, các loại
+                            giấy tờ chứng minh.
+                        </td>
+                        <td>100% chi phí cho năm học đầu tiên.</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="">Clark University Scholarships</a>
+                        </td>
+                        <td>Trình độ tiếng Anh tốt GPA hoặc SAT giỏi trở lên</td>
+                        <td>21.000 - 31.300 USD/ năm (~ 500 - 700 triệu VND/năm)</td>
+                    </tr>
+                    <tr>
+                        <td>Bậc Thạc sĩ và Tiến sĩ</td>
+                        <td><a href="">Fulbright Vietnamese Student Program</a></td>
+                        <td>
+                            Là công dân Việt Nam Đã tốt nghiệp Đại học Có ít nhất 2 năm
+                            kinh nghiệm làm việc đúng lĩnh vực Ngoại ngữ: TOEFL iBT 79,
+                            IELTS 6.5,...
+                        </td>
+                        <td>Hỗ trợ học phí và sinh hoạt phí cho du học sinh</td>
+                    </tr>
+                </table>
+                <h1>7.2. Chính sách cho du học sinh Mỹ</h1>
+                <p>
+                    Thông thường, du học sinh Mỹ không được phép làm thêm trong quá
+                    trình học như các quốc gia khác, nhằm để du học sinh đạt được kết
+                    quả cao nhất. Tuy nhiên, nếu du học sinh làm các công việc tại
+                    khuôn viên trường học thì sẽ được chấp nhận. <br />
+                    Các công việc có thể tham khảo làm như: <br />- Trông coi, giám
+                    sát thư viện : 13.75 USD/giờ. <br />- Trợ giảng: 12 - 16 USD/giờ.
+                    <br />- Trợ lý văn phòng khoa: 15- 16.5 USD/giờ. <br />- Trợ lý
+                    nghiên cứu: 15 - 16 USD/giờ. <br />Ngoài ra, theo những chính sách
+                    đổi mới những năm gần đây, du học sinh nếu muốn làm thêm bên ngoài
+                    khuôn viên nhà trường cần phải xin OPT hoặc CPT.
+                </p>
+            </div>
+            <div id="section8">
+                <h1>8. Cơ hội nghề nghiệp sau khi du học tại Mỹ</h1>
+                <p>
+                    Du học Mỹ mở ra cơ hội nghề nghiệp rất lớn dành cho du học sinh
+                    bởi bằng Cử nhân tại Mỹ được công nhận rộng rãi trên khắp thế giới
+                    và giá trị bằng cao hơn so với các quốc gia khác. Khi du học tại
+                    Mỹ, ngoài các kiến thức học thuật, sinh viên còn được trải nghiệm
+                    và đào tạo các hoạt động ngoại khóa nhằm nâng cao vốn hiểu biết
+                    thực tế.
+                    <br />
+                    Đối với những bạn có nhu cầu định cư và làm việc tại Mỹ, cơ hội
+                    cũng tương đối rộng mở cho các bạn nhưng bạn cần phải thực sự có
+                    năng lực đối với chuyên môn của mình. Mỹ có những ngành đang thiếu
+                    hụt nhân lực như chăm sóc sức khoẻ, kiến trúc xây dựng, kỹ thuật
+                    máy tính, lập trình, nông nghiệp,...Bạn có thể theo học các ngành
+                    trên để mở rộng hơn cơ hội nghề nghiệp của mình và tìm được một
+                    công việc tại Mỹ. <br />
+                    Đối với những bạn có nhu cầu quay trở về Việt Nam, không ngạc
+                    nhiên mấy khi du học sinh Mỹ luôn được các nhà tuyển dụng trong
+                    nước săn đón với mức lương khởi điểm từ 1.000 - 2.000 USD/tháng.
+                    Không những thế, bạn hoàn toàn có thể lựa chọn làm việc tại các
+                    công ty đa quốc gia hoặc khởi nghiệp với vốn kiến thức tích lũy
+                    được khi đi học. Rất nhiều người du học Mỹ đã thành công khi quay
+                    trở về nước.
+                </p>
+            </div>
+            <div id="section9">
+                <h1>9. Cơ hội định cư sau tốt nghiệp khi du học Mỹ</h1>
+                <p>
+                    Tuỳ vào từng loại visa mà thời gian, bạn sẽ được phép ở lại Mỹ là
+                    hoàn toàn khác nhau. Nếu du học Mỹ theo diện visa F1 thời gian tối
+                    đa bạn được ở lại là 60 ngày, còn đối với M1 và J1 chỉ được 30
+                    ngày. Để có cơ hội định cư lâu dài sau khi tốt nghiệp du học Mỹ,
+                    bạn có thể tham khảo những cách sau: <br /><b>Thị thực lao động:</b>
+                    Có rất nhiều các loại thị thực khác nhau và thời gian ở lại cũng
+                    khác nhau, tuy nhiên cách này không dễ đối với những sinh viên mới
+                    ra trường bởi bạn cần được đảm bảo của một công ty. <br /><b>Chương trình OPT:</b>
+                    Chương trình yêu cầu bạn cần hoàn thành tối đa một năm đối với
+                    lĩnh vực mà bạn theo học. Nếu muốn định cư sau khi tốt nghiệp, bạn
+                    cần nộp đơn xin OPT ngay sau khi hoàn thành khóa học. Nếu bạn hoàn
+                    thành khóa học xuất sắc thì sẽ nhận được bảo lãnh H-1B và cuối
+                    cùng là có cơ hội chuyển sang dạng thẻ xanh. <br /><b>Chương trình đầu tư EW hoặc EB5:</b>
+                    Cách này có thể là dễ dàng nhất đối với du học sinh, bạn có thể dễ
+                    dàng lấy thẻ xanh tuy nhiên sẽ phải tốn kha khá tiền và điều kiện
+                    tiên quyết là bạn cần đảm bảo có thể bỏ ra khoản đầu tư tương
+                    đương 500.000 USD (sau đó số tiền này sẽ được hoàn lại).
+                </p>
+            </div>
+            <div id="section10">
+                <h1>10. Kinh nghiệm du học Mỹ</h1>
+                <p>
+                    Để có thể đi du học Mỹ, bạn có thể tham khảo những kinh nghiệm du
+                    học Mỹ của cựu học sinh được IDP tư vấn như sau: <br /><b>Kinh nghiệm tìm và chọn trường:</b>
+                    Nên lập bảng để so sánh các trường, đầu tiên cần xem địa điểm của
+                    trường muốn theo học, cần trả lời câu hỏi muốn theo học ngành gì?
+                    Bạn nên làm các bài trắc nghiệm tính cách để tìm ra điểm mạnh và
+                    chọn được chuyên ngành bản thân yêu thích nhất. <br /><b>Kinh nghiệm phỏng vấn Visa du học:</b>
+                    Bạn có thể tham khảo và vạch ra các câu hỏi thường gặp khi đi
+                    phỏng vấn, có thể tham khảo tại đây. Bạn nên trả lời ngắn gọn,
+                    chính xác, đúng trên hồ sơ sẽ cảm thấy Lãnh sứ quán tin tưởng hơn.
+                    Ngoài ra, bạn nên chuẩn bị kế hoạch học tập thật chi tiết để
+                    thuyết phục được người phỏng vấn. Và đặc biệt bạn nên chuẩn bị
+                    tinh thần thật thoải mái và tự tin nhất có thể. <br /><b>Kinh nghiệm săn học bổng:</b>
+                    Nên tìm hiểu học bổng qua các Website học bổng chính thức và ứng
+                    tuyển vào những vị trí học bổng thật sự phù hợp với bản thân.
+                    Ngoài ra, bạn có thể tìm đến các trung tâm nhằm tìm ra được học
+                    bổng thích hợp nhất và con đường đạt được học bổng cũng ngắn hơn
+                    khi có người trực tiếp hướng dẫn.
+                </p>
+            </div>
+            <div id="section11">
+                <h1>11. Giải đáp thắc mắc về du học Mỹ</h1>
+                <p>
+                    Hành trình để có thể đi du học Mỹ tương đối gian nan, vì vậy có
+                    những thắc mắc về du học Mỹ như sau:
+                </p>
+                <h1>1. Du học Mỹ không cần IELTS có được không?</h1>
+                <p>
+                    Du học Mỹ có thể không cần IELTS đối với tùy từng trường và khu
+                    vực bạn theo học, tuy nhiên bạn cần phải tham gia một khóa học
+                    tiếng Anh một năm bắt buộc trước khi vào học chính thức.
+                </p>
+                <h1>
+                    2. Trường đại học nào ở Mỹ có học phí rẻ nhất cho sinh viên quốc
+                    tế?
+                </h1>
+                <p>
+                    Trường Đại học ở các vùng xa nội thành và ở các Bang với mức chi
+                    phí thấp sẽ có học phí rẻ hơn, có thể kể đến như:
+                </p>
+                - <a href="">College of Southern Nevada</a>: $11,340/ 1 học kì
+                <br />- <a href="">California State University, Fresno</a>: $33,614
+                USD/năm. <br />- <a href="">Arkansas State University</a>:
+                $12,744USD/ năm. <br />- <a href="">University of Cincinnati</a>:
+                $30,010 / năm. <br />- <a href="">Central Michigan University</a>:
+                $19,200/ năm. <br />- <a href="">Southern Arkansas University</a>:
+                $15,010/ năm.
+                <h1>3. Bang nào tốt nhất cho sinh viên quốc tế?</h1>
+                <p>
+                    Tại Mỹ, có 5 Bang tốt nhất dành cho sinh viên quốc tế bởi sự sầm
+                    uất và phát triển, cụ thể: <br />- California <br />- New York
+                    <br />- Texas <br />- Massachusetts <br />- Illinois
+                </p>
+                <h1>4. Có thể được đi làm thêm khi du học tại Mỹ không?</h1>
+                <p>
+                    Như đã đề cập ở trên, du học sinh chỉ được phép làm thêm trong
+                    khuôn khổ khuôn viên nhà trường, mà không được phép làm thêm các
+                    công việc khác trong quá trình học.
+                </p>
+                <h1>5. Thời gian du học Mỹ hết bao nhiêu năm?</h1>
+                <p>
+                    Tuỳ vào từng bậc học, ngành học, chương trình học và trường học sẽ
+                    có những khoảng thời gian riêng. Trung bình, thời gian du học sẽ
+                    kéo dài từ 2 - 5 năm. <br />
+                    Nhìn chung, du học Mỹ vẫn luôn là giấc mơ của rất nhiều người bởi
+                    hệ thống giáo dục tiên tiến nhất thế giới cùng với đa dạng ngành
+                    học và các loại học bổng hỗ trợ sinh viên quốc tế. Tuy nhiên, độ
+                    cạnh tranh các gói hỗ trợ này là rất cao, vì vậy bạn nên tìm đến
+                    những trung tâm tư vấn để có thể tiết kiệm thời gian tìm kiếm và
+                    được tư vấn lộ trình hoàn hảo nhất.
+                </p>
+            </div>
+        </div>
+        <div class="content-right">
+            <div class="content-menu">
+                <h1>NỘI DUNG BÀI VIẾT</h1>
+                <ul>
+                    <li><a href="#section1">1. Có nên du học Mỹ hay không?</a></li>
+                    <li><a href="#section2">2. Điều kiện du học Mỹ</a></li>
+                    <li>
+                        <a href="#section3">3. Thủ tục xin Visa du học Mỹ 2023</a>
+                    </li>
+                    <li>
+                        <a href="#section4">4. Hồ sơ xin thư mời nhập học tại Mỹ</a>
+                    </li>
+                    <li>
+                        <a href="#section5">5. Chi phí du học Mỹ mới nhất 2023</a>
+                    </li>
+                    <li><a href="#section6">6. Du học Mỹ nên học ngành gì?</a></li>
+                    <li>
+                        <a href="#section7">7. Học bổng và chính sách cho du học sinh Mỹ</a>
+                    </li>
+                    <li>
+                        <a href="#section8">8. Cơ hội nghề nghiệp sau khi du học tại Mỹ</a>
+                    </li>
+                    <li>
+                        <a href="#section9">9. Cơ hội định cư sau tốt nghiệp khi du học Mỹ</a>
+                    </li>
+                    <li><a href="#section10">10. Kinh nghiệm du học Mỹ</a></li>
+                    <li>
+                        <a href="#section11">11. Giải đáp thắc mắc về du học Mỹ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    @*<div class="contact-register">
+            <div class="contact-left">
+                <img src="~/Content/images/image 2.png" alt="" />
+            </div>
+            <div class="contact-right">
+                <p>
+                    <b>Bạn muốn du học?</b>
+                    <br />Hãy trao đổi với chuyên gia tư vấn với <b>USEP</b> ngay hôm
+                    nay bằng cách <b>ĐĂNG KÝ TÀI KHOẢN</b>
+                </p>
+                <div class="contact-form">
+                    <input class="contact-input" type="" value="" placeholder="Tên" />
+                    <input class="contact-input" type="" value="" placeholder="Họ" />
+                    <input class="contact-input"
+                           type="email"
+                           value=""
+                           placeholder="Email" />
+                    <input class="contact-input"
+                           type=""
+                           value=""
+                           placeholder="Điện thoại di động" />
+                    <select class="contact-input" name="" id="">
+                        <option value="">Bậc học đang quan tâm?</option>
+                        <option value="">Tiến sĩ</option>
+                        <option value="">Sau Đại học</option>
+                        <option value="">Đại học</option>
+                        <option value="">Dự bị đại học</option>
+                    </select>
+                    <input class="contact-input"
+                           type="password"
+                           value=""
+                           placeholder="Mật khẩu" />
+                    <input class="contact-input"
+                           type="password"
+                           value=""
+                           placeholder="Nhập lại mật khẩu" />
+                    <div>
+                        <button class="btn-register" type="submit">ĐĂNG KÝ</button>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+</main>
+

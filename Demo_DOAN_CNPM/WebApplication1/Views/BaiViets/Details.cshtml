@@ -1,0 +1,67 @@
+﻿@model WebApplication1.Models.BaiViet
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .form{
+        margin: 2% 6% 2% 8%;
+    }
+    img {
+        width: 50%;
+        margin: auto;
+    }
+    .title{
+        font-size: 35px;
+        font-weight: bold;
+        text-align: center;
+    }
+</style>
+
+<div class="form">
+    <dl class="dl-horizontal">
+
+        <dt>
+        </dt>
+        <dd>
+            <div class="title">
+                @Html.DisplayFor(model => model.TenBaiViet)
+            </div>
+        </dd>
+
+        <dt>
+        </dt>
+
+        <dd>
+            <img src="@Model.AnhBaiViet" />
+        </dd>
+
+        <dt>
+        </dt>
+
+        <dd>
+            @Html.Raw(Model.NoiDung)
+        </dd>
+        <dt>
+        </dt>
+        <dd>
+            <div style="float: right; ">
+                @Html.DisplayFor(model => model.ThoiGian)
+            </div>
+        </dd>
+
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.NhanVien.TenNhanVien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NhanVien.TenNhanVien)
+        </dd>*@
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Quay lại", "Index")
+</p>

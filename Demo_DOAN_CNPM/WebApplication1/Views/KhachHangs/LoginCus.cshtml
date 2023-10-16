@@ -1,0 +1,37 @@
+﻿@model WebApplication1.Models.KhachHang
+
+@{
+    Layout = null;
+    <link rel="stylesheet" href="~/Content/css/LoginCus.css" />
+}
+
+@using (Html.BeginForm("LoginAcountCus", "KhachHangs"))
+{
+    <body>
+        <a href="@Url.Action("Info", "Home")"><i class="fa-solid fa-arrow-left" style="color: #004aad; font-size: 30px; margin: 30px 0 0 30px;"></i></a>
+        <div class="container">
+            <div class="login-form">
+                <div class="login-form-left">
+                    @Html.AntiForgeryToken()
+                    <p class="form-title">CHÀO MỪNG BẠN QUAY TRỞ LẠI!</p>
+                    <input class="form-input" type="text" name="EmailKH" placeholder="Email"><br>
+                    <input class="form-input" type="password" name="MatKhau" placeholder="Mật khẩu"><br>
+                    <div class="forgot-pass">
+                        <a href="">Quên mật khẩu?</a>
+                    </div>
+                    <div class="btn-login">
+                        <input class="btn-login-submit" type="submit" value="ĐĂNG NHẬP">
+                    </div>
+                    <div class="link-register">
+                        <p>Bạn chưa có tài khoản, vui lòng <a href="@Url.Action("CreateCustomer", "KhachHangs")">ĐĂNG KÝ</a></p>
+                    </div>
+                </div>
+                <div class="login-img">
+                    <img src="~/Content/images/svgLog.png" alt="">
+                </div>
+            </div>
+        </div>
+    </body>
+}
+<script src="https://kit.fontawesome.com/92e7113135.js"
+        crossorigin="anonymous"></script>

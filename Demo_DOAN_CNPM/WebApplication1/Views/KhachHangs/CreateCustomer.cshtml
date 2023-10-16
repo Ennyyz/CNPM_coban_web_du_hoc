@@ -1,0 +1,46 @@
+﻿@model WebApplication1.Models.KhachHang
+
+@{
+    Layout = null;
+    <link rel="stylesheet" href="~/Content/css/CreateCustomer.css" />
+}
+@using (Html.BeginForm("CreateCustomer", "KhachHangs", FormMethod.Post))
+{
+    <body>
+        <a href="@Url.Action("Info", "Home")"><i class="fa-solid fa-arrow-left" style="color: #004aad; font-size: 30px; margin: 30px 0 0 30px;"></i></a>
+        <div class="container">
+            <div class="register-form">
+                <div class="register-img">
+                    <img src="~/Content/images/Register 1.png" alt="" />
+                </div>
+                @Html.AntiForgeryToken()
+                <div class="register-form-right">
+                    <p class="form-title">CHÀO MỪNG BẠN ĐẾN VỚI USEP</p>
+                    @Html.TextBoxFor(model => model.TenKhachHang, new { @class = "form-input", placeholder = "Họ và tên" })
+                <div>
+                    @Html.ValidationMessageFor(model => model.TenKhachHang, "", new { @class = "text-danger" })
+                </div>
+                    @Html.TextBoxFor(model => model.SoDienThoai, new { @class = "form-input", placeholder = "Số điện thoại" })
+                <div>
+                    @Html.ValidationMessageFor(model => model.SoDienThoai, "", new { @class = "text-danger" })
+                </div>
+                    @Html.TextBoxFor(model => model.EmailKH, new { @class = "form-input", placeholder = "Email" })
+                <div>
+                    @Html.ValidationMessageFor(model => model.EmailKH, "", new { @class = "text-danger" })
+                </div>
+                    @Html.TextBoxFor(model => model.MatKhau, new { @class = "form-input", type = "password", placeholder = "Mật khẩu" })
+                <div>
+                    @Html.ValidationMessageFor(model => model.MatKhau, "", new { @class = "text-danger" })
+                </div>
+                    <div class="btn-register">
+                        <button class="btn-register-submit" type="submit" value="ĐĂNG KÝ">Đăng ký</button>
+                    </div>
+                    <div class="link-register">
+                        <p>Bạn đã có tài khoản? <a href="@Url.Action("LoginCus", "KhachHangs")">ĐĂNG NHẬP NGAY</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+}
+<script src="https://kit.fontawesome.com/92e7113135.js" crossorigin="anonymous"></script>

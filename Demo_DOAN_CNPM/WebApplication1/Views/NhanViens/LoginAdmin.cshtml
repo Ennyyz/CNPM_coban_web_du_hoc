@@ -1,0 +1,107 @@
+﻿@model WebApplication1.Models.NhanVien
+
+@{
+    ViewBag.Title = "LoginAdmin";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<style>
+/*    .container {
+        background-color: white;
+        margin: 1% 10%;
+        width: 80%;
+        height: auto;
+        padding: 5%;
+        border-radius: 20px;
+    }*/
+
+    .login-form {
+        display: flex;
+        margin: 3% 2% 0 2%;
+    }
+
+    .login-form-left {
+        width: 50%;
+        text-align: center;
+    }
+
+    .form-title {
+        font-weight: 700;
+        font-size: 30px;
+    }
+
+    .form-input {
+        border-radius: 20px;
+        padding: 10px 10px;
+        margin-top: 20px;
+        width: 70%;
+        border: 1px solid rgba(170, 170, 170, 0.67);
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        font-weight: 700;
+        font-size: 18px;
+    }
+
+    .forgot-pass {
+        padding: 10px 0 0 45%;
+    }
+
+        .forgot-pass a {
+            text-decoration: none;
+            color: #aaa;
+        }
+
+    .btn-login-submit {
+        background-color: #630101;
+        padding: 3px 20px;
+        border-radius: 20px;
+        border: 3px solid #FFF2F2;
+        font-weight: 700;
+        font-size: 25px;
+        color: white;
+        margin: 50px 0 30px 0;
+        cursor: pointer;
+    }
+
+    .link-register {
+        color: #aaa;s
+    }
+
+        .link-register a {
+            color: #630101;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+    .login-img {
+        width: 50%;
+    }
+
+</style>
+@using (Html.BeginForm("LoginAcountAdmin", "NhanViens"))
+{
+    <body>
+        @*<a href="@Url.Action("Info", "Home")"><i class="fa-solid fa-arrow-left" style="color: #004aad; font-size: 30px; margin: 30px 0 0 30px;"></i></a>*@
+        <div class="container">
+            <div class="login-form">
+                <div class="login-form-left">
+                    @Html.AntiForgeryToken()
+                    <p class="form-title">CHÀO MỪNG BẠN QUAY TRỞ LẠI!</p>
+                    <input class="form-input" type="text" name="EmailNV" placeholder="Email"><br>
+                    <input class="form-input" type="password" name="MatKhau" placeholder="Mật khẩu"><br>
+                    <div class="forgot-pass">
+                        <a href="">Quên mật khẩu?</a>
+                    </div>
+                    <div class="btn-login">
+                        <input class="btn-login-submit" type="submit" value="ĐĂNG NHẬP">
+                    </div>
+                    <div class="link-register">
+                        <p>Bạn chưa có tài khoản, vui lòng <a href="@Url.Action("CreateAdmin", "NhanViens")">ĐĂNG KÝ</a></p>
+                    </div>
+                </div>
+                <div class="login-img">
+                    <img src="~/Content/images/svgLog.png" alt="">
+                </div>
+            </div>
+        </div>
+    </body>
+}
+

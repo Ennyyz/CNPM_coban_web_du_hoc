@@ -1,0 +1,31 @@
+﻿@model IEnumerable<WebApplication1.Models.BaiViet>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    <meta charset="UTF-8">
+
+}
+<style>
+    table{
+        margin: 2% 8%;
+    }
+    img{
+        width: 100%;
+    }
+</style>
+<table align="center">
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <b>@Html.DisplayFor(modelItem => item.TenBaiViet)</b><br />
+                @Html.ActionLink("Xem thêm", "Details", new { id = item.MaBaiViet })
+            </td>
+            <td>
+                <img src="@item.AnhBaiViet"/>
+            </td>
+        </tr>
+    }
+</table>
+

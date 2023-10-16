@@ -1,0 +1,65 @@
+﻿@model WebApplication1.Models.HoSoDuHoc
+
+@{
+    ViewBag.Title = "HoSo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .hoso {
+        background-color: #E3EFFF;
+        margin: 2% 5%;
+        width: 90%;
+        height: 50vh;
+        padding: 2%;
+        border-radius: 20px;
+        text-align: center;
+        border: 3px dotted #004AAD;
+    }
+
+    a {
+        text-decoration: none;
+        color: #004AAD;
+    }
+    th{
+                color: #004AAD;
+
+    }
+    table{
+        margin-top: 50px;
+    }
+</style>
+<div class="hoso">
+    @if (Model != null)
+    {
+        <h1>THÔNG TIN HỒ SƠ CỦA BẠN</h1>
+        <table>
+            <tr>
+                <th>Tên</th>
+                <th>Số điện thoại</th>
+                <th>Học lực</th>
+                <th>Trình độ Tiếng Anh</th>
+                <th>Ngày nộp hồ sơ</th>
+                <th>Bậc học muốn du học</th>
+                <th>Trạng thái hồ sơ hiện tại</th>
+            </tr>
+            <tr>
+                <td>@Model.KhachHang.TenKhachHang</td>
+                <td>@Model.KhachHang.SoDienThoai</td>
+                <td>@Model.HocLuc</td>
+                <td>@Model.TiengAnh</td>
+                <td>@Model.NgayNop</td>
+                <td>@Model.BacHoc.TenBacHoc</td>
+                <td style="color: #1A5D1A; font-weight: 700 ">@Model.TrangThai</td>
+            </tr>
+        </table>
+    }
+    else
+    {
+        <h2>Không tìm thấy thông tin hồ sơ cho khách hàng này.</h2>
+        <p>Bạn có thể tạo hồ sơ ngay bằng cách ấn vào <a href="@Url.Action("Create", "TaoHoSo")">đây</a>.</p>
+    }
+</div>
+
+
+

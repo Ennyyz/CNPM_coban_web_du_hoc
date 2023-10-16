@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CNPM_DEAN_TESTModelStoreContainer" CdmEntityContainer="CNPM_DEAN_TESTEntities">
+    <EntitySetMapping Name="BacHocs">
+      <EntityTypeMapping TypeName="CNPM_DEAN_TESTModel.BacHoc">
+        <MappingFragment StoreEntitySet="BacHoc">
+          <ScalarProperty Name="MaBacHoc" ColumnName="MaBacHoc" />
+          <ScalarProperty Name="TenBacHoc" ColumnName="TenBacHoc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BaiViets">
+      <EntityTypeMapping TypeName="CNPM_DEAN_TESTModel.BaiViet">
+        <MappingFragment StoreEntitySet="BaiViet">
+          <ScalarProperty Name="MaBaiViet" ColumnName="MaBaiViet" />
+          <ScalarProperty Name="TenBaiViet" ColumnName="TenBaiViet" />
+          <ScalarProperty Name="AnhBaiViet" ColumnName="AnhBaiViet" />
+          <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+          <ScalarProperty Name="ThoiGian" ColumnName="ThoiGian" />
+          <ScalarProperty Name="MaNhanVien" ColumnName="MaNhanVien" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DiaChiBangs">
+      <EntityTypeMapping TypeName="CNPM_DEAN_TESTModel.DiaChiBang">
+        <MappingFragment StoreEntitySet="DiaChiBang">
+          <ScalarProperty Name="MaBang" ColumnName="MaBang" />
+          <ScalarProperty Name="TenBang" ColumnName="TenBang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HoSoDuHocs">
+      <EntityTypeMapping TypeName="CNPM_DEAN_TESTModel.HoSoDuHoc">
+        <MappingFragment StoreEntitySet="HoSoDuHoc">
+          <ScalarProperty Name="MaHoSo" ColumnName="MaHoSo" />
+          <ScalarProperty Name="HocLuc" ColumnName="HocLuc" />
+          <ScalarProperty Name="TiengAnh" ColumnName="TiengAnh" />
+          <ScalarProperty Name="NgayNop" ColumnName="NgayNop" />
+          <ScalarProperty Name="TrangThai" ColumnName="TrangThai" />
+          <ScalarProperty Name="MaBacHoc" ColumnName="MaBacHoc" />
+          <ScalarProperty Name="MaKhachHang" ColumnName="MaKhachHang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KhachHangs">
+      <EntityTypeMapping TypeName="CNPM_DEAN_TESTModel.KhachHang">
+        <MappingFragment StoreEntitySet="KhachHang">
+          <ScalarProperty Name="MaKhachHang" ColumnName="MaKhachHang" />
+          <ScalarProperty Name="TenKhachHang" ColumnName="TenKhachHang" />
+          <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
+          <ScalarProperty Name="EmailKH" ColumnName="EmailKH" />
+          <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NhanViens">
+      <EntityTypeMapping TypeName="CNPM_DEAN_TESTModel.NhanVien">
+        <MappingFragment StoreEntitySet="NhanVien">
+          <ScalarProperty Name="MaNhanVien" ColumnName="MaNhanVien" />
+          <ScalarProperty Name="TenNhanVien" ColumnName="TenNhanVien" />
+          <ScalarProperty Name="EmailNV" ColumnName="EmailNV" />
+          <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="CNPM_DEAN_TESTModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ThongTinDuHocs">
+      <EntityTypeMapping TypeName="CNPM_DEAN_TESTModel.ThongTinDuHoc">
+        <MappingFragment StoreEntitySet="ThongTinDuHoc">
+          <ScalarProperty Name="MaTTDH" ColumnName="MaTTDH" />
+          <ScalarProperty Name="TenThongTinDuHoc" ColumnName="TenThongTinDuHoc" />
+          <ScalarProperty Name="TenTruong" ColumnName="TenTruong" />
+          <ScalarProperty Name="DiaChiTruong" ColumnName="DiaChiTruong" />
+          <ScalarProperty Name="MoTaThongTin" ColumnName="MoTaThongTin" />
+          <ScalarProperty Name="ChiPhi" ColumnName="ChiPhi" />
+          <ScalarProperty Name="HocLuc" ColumnName="HocLuc" />
+          <ScalarProperty Name="TiengAnh" ColumnName="TiengAnh" />
+          <ScalarProperty Name="NgayDang" ColumnName="NgayDang" />
+          <ScalarProperty Name="HanNop" ColumnName="HanNop" />
+          <ScalarProperty Name="MaNhanVien" ColumnName="MaNhanVien" />
+          <ScalarProperty Name="MaBacHoc" ColumnName="MaBacHoc" />
+          <ScalarProperty Name="MaBang" ColumnName="MaBang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,100 @@
+﻿@model WebApplication1.Models.NhanVien
+
+@{
+    ViewBag.Title = "CreateAdmin";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<style>
+    .register-form {
+        display: flex;
+        margin: 3% 2% 0 2%;
+    }
+
+    .register-form-right {
+        width: 50%;
+        text-align: center;
+    }
+
+    .form-title {
+        font-weight: 700;
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+
+    .form-input {
+        border-radius: 20px;
+        padding: 10px 10px;
+        margin-top: 30px;
+        width: 70%;
+        border: 1px solid rgba(170, 170, 170, 0.67);
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        font-weight: 700;
+        font-size: 18px;
+    }
+
+    .btn-register-submit {
+        background-color: #630101;
+        padding: 3px 20px;
+        border-radius: 20px;
+        border: 5px solid #FFF2F2;
+        font-weight: 700;
+        font-size: 25px;
+        color: white;
+        margin: 30px 0 20px 0;
+        cursor: pointer;
+    }
+
+    .link-register {
+        color: #aaa;
+    }
+
+        .link-register a {
+            color: #630101;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+    .register-img {
+        width: 50%;
+    }
+    .text-danger{
+        color: red;
+        font-size: 15px;
+    }
+</style>
+@using (Html.BeginForm("CreateAdmin", "NhanViens", FormMethod.Post))
+{
+    <body>
+        @*<a href="@Url.Action("Info", "Home")"><i class="fa-solid fa-arrow-left" style="color: #004aad; font-size: 30px; margin: 30px 0 0 30px;"></i></a>*@
+        <div class="container">
+            <div class="register-form">
+                <div class="register-img">
+                    <img src="~/Content/images/Register 1.png" alt="" />
+                </div>
+                @Html.AntiForgeryToken()
+                <div class="register-form-right">
+                    <p class="form-title">CHÀO MỪNG BẠN ĐẾN VỚI USEP</p>
+                    @Html.TextBoxFor(model => model.TenNhanVien, new { @class = "form-input", placeholder = "Họ và tên" })
+                    <div>
+                        @Html.ValidationMessageFor(model => model.TenNhanVien, "", new { @class = "text-danger" })
+                    </div>
+                    @Html.TextBoxFor(model => model.EmailNV, new { @class = "form-input", placeholder = "Email" })
+                    <div>
+                        @Html.ValidationMessageFor(model => model.EmailNV, "", new { @class = "text-danger" })
+                    </div>
+                    @Html.TextBoxFor(model => model.MatKhau, new { @class = "form-input", type = "password", placeholder = "Mật khẩu" })
+                    <div>
+                        @Html.ValidationMessageFor(model => model.MatKhau, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="btn-register">
+                        <button class="btn-register-submit" type="submit" value="ĐĂNG KÝ">Đăng ký</button>
+                    </div>
+                    <div class="link-register">
+                        <p>Bạn đã có tài khoản? <a href="@Url.Action("LoginAdmin", "NhanViens")">ĐĂNG NHẬP NGAY</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+}
+

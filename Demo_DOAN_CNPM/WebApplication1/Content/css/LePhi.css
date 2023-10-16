@@ -1,0 +1,64 @@
+﻿.content {
+    margin: 3% 5%;
+}
+
+table {
+    border-collapse: collapse;
+    margin-left: 15%;
+}
+
+    table td {
+        border-width: 1px;
+        width: 14%;
+        text-align: left;
+        border-style: solid;
+        padding-left: 5px;
+        padding-right: 5px;
+        border-color: lightslategray;
+    }
+
+.full-body {
+    width: 70%;
+    margin-left: 12%;
+    margin-bottom: 1%;
+}
+
+.col-title td {
+    text-align: center;
+    padding: 0px;
+    font-size: larger;
+    font-weight: 900;
+    background-color: lightgrey;
+}
+
+.col-stt {
+    width: 1%;
+    text-align: center;
+}
+
+.text-bold {
+    font-size: larger;
+    font-weight: 900;
+    color: #004AAD;
+}
+
+.text-bold1 {
+    font-size: larger;
+    font-weight: 900;
+}
+
+.row-color {
+    background-color: gainsboro;
+}
+
+h1 {
+    color: #004AAD;
+}
+
+.reason-register li {
+    margin-top: 1%;
+}
+
+.section2 table td {
+    height: 10px;
+}

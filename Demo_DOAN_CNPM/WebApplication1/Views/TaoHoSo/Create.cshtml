@@ -1,0 +1,150 @@
+﻿@model WebApplication1.Models.HoSoDuHoc
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .add {
+        background-color: #E3EFFF;
+        text-align: center;
+        margin: 2% 20% 5% 20%;
+        padding: 2% 0 5% 0;
+        border-radius: 20px;
+    }
+    .title-add-onl {
+        font-size: 30px;
+        font-weight: 700;
+        color: #004AAD;
+    }
+
+    .des-add {
+        display: block;
+    }
+    .form-input {
+        display: flex;
+        border-radius: 20px;
+        padding: 5px 10px;
+        /*margin-top: 20px;*/
+        width: 63%;
+        border: 1px solid rgba(170, 170, 170, 0.67);
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        font-weight: 700;
+        font-size: 18px;
+        margin-left: 100px;
+    }
+    .form-input-1 {
+        display: flex;
+        border-radius: 20px;
+        padding: 5px 10px;
+        /*margin-top: 20px;*/
+        width: 145%;
+        border: 1px solid rgba(170, 170, 170, 0.67);
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+        font-weight: 700;
+        font-size: 18px;
+        margin-left: 100px;
+    }
+    .form-group{
+        display:flex;
+        margin: 0 0 20px 50px;
+    }
+    .btn-register {
+        padding: 5px 30px;
+        background-color: #7F1C22;
+        font-weight: 700;
+        color: white;
+        border-radius: 15px;
+        margin-top: 40px;
+        cursor: pointer;
+        border: none;
+
+    }
+
+        .btn-register:hover {
+            background-color: #97000b;
+        }
+</style>
+@using (Html.BeginForm("Create", "TaoHoSo", FormMethod.Post))
+
+{
+    @Html.AntiForgeryToken()
+
+<div class="add">
+    <span class="title-add-onl">NỘP HỒ SƠ ONLINE</span>
+    <span class="des-add">
+        Chào mừng bạn đến với ứng dụng Nộp hồ sơ online của Du Học
+        USEP!
+    </span>
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+    <div class="form-group">
+        @Html.Label("", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="form-input">
+            @ViewBag.TenKhachHang
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.Label("", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="form-input">
+            @ViewBag.SDT
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.Label("", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="form-input">
+            @ViewBag.EmailKH
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.Label("", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="form-input">
+            @ViewBag.NgayNop
+           
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="">
+            @Html.EditorFor(model => model.HocLuc, new { htmlAttributes = new { @class = "form-input-1", placeholder = "Học lực hiện tại" } })
+            @Html.ValidationMessageFor(model => model.HocLuc, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <div class="">
+            @Html.EditorFor(model => model.TiengAnh, new { htmlAttributes = new { @class = "form-input-1", placeholder = "Trình độ Tiếng Anh" } })
+            @Html.ValidationMessageFor(model => model.TiengAnh, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="">
+            @Html.EditorFor(model => model.TrangThai, new { htmlAttributes = new { @class = "form-input-1", @readonly = "readonly" } })
+            <!-- Display any validation messages here if needed -->
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="">
+            <select class="form-input-1" name="MaBacHoc">
+                <option value="">Bậc học đang quan tâm?</option>
+                <option value="tien-si">Tiến sĩ</option>
+                <option value="sau-dai-hoc">Sau Đại học</option>
+                <option value="dai-hoc">Đại học</option>
+                <option value="du-bi-dai-hoc">Dự bị Đại học</option>
+            </select>
+            @Html.ValidationMessageFor(model => model.MaBacHoc, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Tạo hồ sơ" class="btn-register" />
+        </div>
+    </div>
+</div>
+}

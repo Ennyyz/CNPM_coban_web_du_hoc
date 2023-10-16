@@ -1,0 +1,69 @@
+﻿@model IEnumerable<WebApplication1.Models.HoSoDuHoc>
+
+@{
+    ViewBag.Title = "Danh sách hồ sơ";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<p style="text-align: center; margin: 20px 0;">
+    @Html.ActionLink("TẠO HỒ SƠ", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Mã KH
+        </th>
+        <th>
+            @*@ViewBag.TenKH*@
+            @Html.DisplayNameFor(model => model.KhachHang.TenKhachHang)
+        </th>
+        <th>
+            Học lực
+        </th>
+        <th>
+            Tiếng Anh
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayNop)
+        </th>
+        <th>
+            Trạng thái hồ sơ hiện tại
+        </th>
+        <th>
+            Bậc học
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaKhachHang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KhachHang.TenKhachHang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HocLuc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TiengAnh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayNop)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrangThai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BacHoc.TenBacHoc)
+        </td>
+
+        <td>
+            @Html.ActionLink("Cập nhật", "Edit", new { id = item.MaHoSo }) |
+            @*@Html.ActionLink("Chi tiết", "Details", new { id = item.MaHoSo }) |*@
+            @Html.ActionLink("Xóa", "Delete", new { id = item.MaHoSo })
+        </td>
+    </tr>
+}
+
+</table>
